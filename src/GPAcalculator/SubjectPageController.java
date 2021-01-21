@@ -4,10 +4,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -36,6 +36,21 @@ public class SubjectPageController implements Initializable {
     @FXML
     TableColumn<Subject, Subject.DelButton> btnCol;
 
+    @FXML
+    TextField subjectNameField;
+
+    @FXML
+    TextField creditField;
+
+    @FXML
+    Text creditText;
+
+    @FXML
+    Text statusText;
+
+    @FXML
+    ChoiceBox<Double> subjectChoiceBox;
+
     Student student;
 
     @Override
@@ -54,6 +69,23 @@ public class SubjectPageController implements Initializable {
             throwables.printStackTrace();
         }
 
+        subjectChoiceBox.setItems(getGradeList());
+        subjectChoiceBox.getSelectionModel().selectFirst();
+
+    }
+
+    private ObservableList<Double> getGradeList() {
+        ObservableList<Double> grades = FXCollections.observableArrayList();
+        grades.add(4.0);
+        grades.add(3.5);
+        grades.add(3.0);
+        grades.add(2.5);
+        grades.add(2.0);
+        grades.add(1.5);
+        grades.add(1.0);
+        grades.add(0.0);
+
+        return grades;
     }
 
     private ObservableList<Subject> getSubjectList() throws SQLException {
@@ -77,6 +109,42 @@ public class SubjectPageController implements Initializable {
         subjectStatement.close();
 
         return subjects;
+
+    }
+
+    public void AddSubject() throws SQLException {
+        String subjectNameText = subjectNameField.getText();
+        String creditText = creditField.getText();
+        String studentID = student.getSid();
+        double gradeText = subjectChoiceBox.getValue();
+
+        if (subjectNameText.isEmpty() || creditText.isEmpty()) {
+            statusText.setText("Error: Fields are empty");
+        } else {
+            int creditInt = Integer.parseInt(creditText);
+            PreparedStatement addSubjectStatement = Main.connection.prepareStatement(
+                    "INSERT INTO `enrolled`(`SID`,`COURSE_ID`,`GRADE`,Credit) VALUES (?,?,?,?)"
+            );
+
+            addSubjectStatement.setString(1,studentID);
+            addSubjectStatement.setString(2,subjectNameText);
+            addSubjectStatement.setDouble(3,gradeText);
+            addSubjectStatement.setInt(4,creditInt);
+
+            int i = addSubjectStatement.executeUpdate();
+
+            if (i > 0) {
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Add Subject Complete!");
+                alert.setHeaderText(null);
+                alert.setContentText("Added " + subjectNameText + " for student " + student.getsName());
+                alert.showAndWait();
+
+            }
+
+            closeWindow();
+        }
 
     }
 

@@ -22,17 +22,17 @@
       </TableView>
       <AnchorPane layoutX="926.0" layoutY="14.0" prefHeight="690.0" prefWidth="340.0" style="-fx-background-color: #a2d0c1;">
          <children>
-            <TextField layoutX="60.0" layoutY="420.0" prefHeight="40.0" prefWidth="220.0">
+            <TextField fx:id="subjectNameField" layoutX="60.0" layoutY="420.0" prefHeight="40.0" prefWidth="220.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField layoutX="60.0" layoutY="501.0" prefHeight="40.0" prefWidth="220.0">
+            <TextField fx:id="creditField" layoutX="60.0" layoutY="501.0" prefHeight="40.0" prefWidth="220.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <ChoiceBox layoutX="60.0" layoutY="578.0" prefWidth="220.0" />
+            <ChoiceBox fx:id="subjectChoiceBox" layoutX="60.0" layoutY="578.0" prefWidth="220.0" />
             <Text layoutX="91.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD SUBJECT">
                <font>
                   <Font name="System Bold" size="24.0" />
@@ -73,12 +73,13 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Text layoutX="142.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits">
+            <Text fx:id="creditText" layoutX="142.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credits">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Button layoutX="109.0" layoutY="628.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="121.0" text="Add Subject" />
+            <Button layoutX="109.0" layoutY="628.0" mnemonicParsing="false" onAction="#AddSubject" prefHeight="40.0" prefWidth="121.0" text="Add Subject" />
+            <Text fx:id="statusText" fill="#f80000" layoutX="161.0" layoutY="623.0" strokeType="OUTSIDE" strokeWidth="0.0" />
          </children>
       </AnchorPane>
    </children>

@@ -57,17 +57,7 @@ public class MainMenuController implements Initializable {
                         " Department: " +student.getDepartment().getD_NAME() + "(" +student.getDepartment().getLOCATION() + ")"
         );
 
-        double currentGPADouble = currentGPAObject.getGPA();
-
-        currentGPA.setText(String.format("%.2f",currentGPADouble));
-
-        if (currentGPADouble < 2.0) {
-            currentGPA.setFill(Color.RED);
-        } else if (currentGPADouble > 3.25) {
-            currentGPA.setFill(Color.DARKBLUE);
-        } else {
-            currentGPA.setFill(Color.BLACK);
-        }
+        UpdateGPA();
     }
 
     public void subjectBtn() throws IOException {
@@ -83,7 +73,22 @@ public class MainMenuController implements Initializable {
 
         pane.setDisable(true);
         stage.showAndWait();
+        UpdateGPA();
         pane.setDisable(false);
+    }
+
+    private void UpdateGPA() {
+        double currentGPADouble = currentGPAObject.getGPA();
+
+        currentGPA.setText(String.format("%.2f",currentGPADouble));
+
+        if (currentGPADouble < 2.0) {
+            currentGPA.setFill(Color.RED);
+        } else if (currentGPADouble > 3.25) {
+            currentGPA.setFill(Color.DARKBLUE);
+        } else {
+            currentGPA.setFill(Color.BLACK);
+        }
     }
 
     private Student createLoggedInStudent(String sID) throws SQLException {
