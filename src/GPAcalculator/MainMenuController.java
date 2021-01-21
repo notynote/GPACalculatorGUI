@@ -2,12 +2,15 @@ package GPAcalculator;
 
 import GPAcalculator.GPA.CurrentGPA;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,6 +68,22 @@ public class MainMenuController implements Initializable {
         } else {
             currentGPA.setFill(Color.BLACK);
         }
+    }
+
+    public void subjectBtn() throws IOException {
+
+        FXMLLoader ld = new FXMLLoader();
+        Pane root = ld.load(getClass().getResource("SubjectPage.fxml").openStream());
+
+        SubjectPageController controller = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Subject List");
+        stage.setScene(scene);
+
+        pane.setDisable(true);
+        stage.showAndWait();
+        pane.setDisable(false);
     }
 
     private Student createLoggedInStudent(String sID) throws SQLException {
