@@ -3,7 +3,10 @@ package GPAcalculator;
 import GPAcalculator.GPA.CurrentGPA;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -12,6 +15,9 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class MainMenuController implements Initializable {
+
+    @FXML
+    Pane pane;
 
     @FXML
     Text welcomeText;
@@ -23,7 +29,7 @@ public class MainMenuController implements Initializable {
     Text currentGPA;
 
     String sID;
-    Student student;
+    public static Student student;
     CurrentGPA currentGPAObject;
 
     @Override
@@ -47,7 +53,18 @@ public class MainMenuController implements Initializable {
                 "Current Term: " + currentTerm + " Total Credit: " + student.getTotalCredit() +
                         " Department: " +student.getDepartment().getD_NAME() + "(" +student.getDepartment().getLOCATION() + ")"
         );
-        currentGPA.setText(String.format("%.2f",currentGPAObject.getGPA()));
+
+        double currentGPADouble = currentGPAObject.getGPA();
+
+        currentGPA.setText(String.format("%.2f",currentGPADouble));
+
+        if (currentGPADouble < 2.0) {
+            currentGPA.setFill(Color.RED);
+        } else if (currentGPADouble > 3.25) {
+            currentGPA.setFill(Color.DARKBLUE);
+        } else {
+            currentGPA.setFill(Color.BLACK);
+        }
     }
 
     private Student createLoggedInStudent(String sID) throws SQLException {
@@ -66,5 +83,10 @@ public class MainMenuController implements Initializable {
 
         return null;
 
+    }
+
+    public void closeWindow() {
+        Stage stage = (Stage) pane.getScene().getWindow();
+        stage.close();
     }
 }
