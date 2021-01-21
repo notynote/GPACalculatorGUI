@@ -16,4 +16,28 @@ public class Department {
     public String toString() {
         return  D_ID + " - " + D_NAME + " - " + LOCATION;
     }
+
+    public int getD_ID() {
+        return D_ID;
+    }
+
+    public void setD_ID(int d_ID) {
+        D_ID = d_ID;
+    }
+
+    public String getD_NAME() {
+        return D_NAME;
+    }
+
+    public void setD_NAME(String d_NAME) {
+        D_NAME = d_NAME;
+    }
+
+    public String getLOCATION() {
+        return LOCATION;
+    }
+
+    public void setLOCATION(String LOCATION) {
+        this.LOCATION = LOCATION;
+    }
 }
