@@ -36,8 +36,10 @@ public class LoginController {
     @FXML
     Text statusText;
 
+    public static String loggedInStudentID;
+
     //login
-    public void login() throws SQLException {
+    public void login() throws SQLException, IOException {
 
         String studentIDText = studentID.getText();
         String passCodeText = passCode.getText();
@@ -48,11 +50,30 @@ public class LoginController {
         } else {
 
             if (checkUser(studentIDText,passCodeText)) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("FUCK YEAH!");
-                alert.setHeaderText(null);
-                alert.setContentText("YOU FUCKING LOGGED IN WITH STUDENT ID " + studentIDText);
-                alert.showAndWait();
+//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                alert.setTitle("FUCK YEAH!");
+//                alert.setHeaderText(null);
+//                alert.setContentText("YOU FUCKING LOGGED IN WITH STUDENT ID " + studentIDText);
+//                alert.showAndWait();
+
+                loggedInStudentID = studentIDText;
+
+                FXMLLoader ld = new FXMLLoader();
+                Pane root = ld.load(getClass().getResource("MainMenu.fxml").openStream());
+
+                MainMenuController controller = ld.getController();
+
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setTitle("Main Menu");
+                stage.setScene(scene);
+
+                studentID.clear();
+                passCode.clear();
+
+                p.setDisable(true);
+                stage.showAndWait();
+                p.setDisable(false);
             } else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("FUCK NO!");
