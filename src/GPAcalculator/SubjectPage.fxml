@@ -45,17 +45,17 @@
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Text>
-                  <Text layoutX="100.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name">
+                  <Text fx:id="studentNameText" layoutX="100.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="111.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Credit">
+                  <Text fx:id="studentTotalCreditText" layoutX="111.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Credit" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="108.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current GPA">
+                  <Text fx:id="currentGPAText" layoutX="108.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current GPA" textAlignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>

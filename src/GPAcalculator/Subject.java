@@ -16,6 +16,7 @@ public class Subject {
     double grade;
     DelButton button;
     Pane pane;
+    String gradeText;
 
     public Subject(String name, int credit, double grade) {
         this.name = name;
@@ -23,12 +24,13 @@ public class Subject {
         this.grade = grade;
     }
 
-    public Subject(String name, int credit, double grade, int id, Pane pane) {
+    public Subject(String name, int credit, double grade, int id, Pane pane, String gradeText) {
         this.name = name;
         this.credit = credit;
         this.grade = grade;
         this.button = new DelButton(id,pane);
         this.pane = pane;
+        this.gradeText = gradeText + " - " + grade;
     }
 
     public String getName() {
@@ -71,6 +73,14 @@ public class Subject {
         this.pane = pane;
     }
 
+    public String getGradeText() {
+        return gradeText;
+    }
+
+    public void setGradeText(String gradeText) {
+        this.gradeText = gradeText;
+    }
+
     public static class DelButton extends Button {
 
         public DelButton(int id, Pane pane) {
@@ -102,7 +112,7 @@ public class Subject {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Success!");
                 alert.setHeaderText(null);
-                alert.setContentText("You've paid bill \"" + id + "\"");
+                alert.setContentText("Delete subject id \"" + id + "\"");
                 alert.showAndWait();
 
                 Stage stage = (Stage) pane.getScene().getWindow();

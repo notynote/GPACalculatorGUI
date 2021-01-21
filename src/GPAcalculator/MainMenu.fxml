@@ -50,12 +50,17 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="278.0" layoutY="320.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="CHANGE PASSWORD">
+                  <Button layoutX="453.0" layoutY="318.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="CHANGE PASSWORD">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="632.0" layoutY="320.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="100.0" prefWidth="300.0" text="LOG OFF">
+                  <Button layoutX="820.0" layoutY="318.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="100.0" prefWidth="300.0" text="LOG OFF">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="100.0" layoutY="318.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="EDIT INFORMATION">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

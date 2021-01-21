@@ -32,8 +32,8 @@ public class MainMenuController implements Initializable {
     Text currentGPA;
 
     String sID;
+    int currentTerm;
     public static Student student;
-    CurrentGPA currentGPAObject;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,9 +46,9 @@ public class MainMenuController implements Initializable {
         }
 
         assert student != null;
-        currentGPAObject = new CurrentGPA(student);
+        CurrentGPA currentGPAObject = new CurrentGPA(student);
 
-        int currentTerm = student.getTermTaken()+1;
+        currentTerm = student.getTermTaken()+1;
 
 
         welcomeText.setText("WELCOME " + student.getsName());
@@ -57,10 +57,20 @@ public class MainMenuController implements Initializable {
                         " Department: " +student.getDepartment().getD_NAME() + "(" +student.getDepartment().getLOCATION() + ")"
         );
 
-        UpdateGPA();
+        double currentGPADouble = currentGPAObject.getGPA();
+
+        currentGPA.setText(String.format("%.2f",currentGPADouble));
+
+        if (currentGPADouble < 2.0) {
+            currentGPA.setFill(Color.RED);
+        } else if (currentGPADouble > 3.25) {
+            currentGPA.setFill(Color.DARKBLUE);
+        } else {
+            currentGPA.setFill(Color.BLACK);
+        }
     }
 
-    public void subjectBtn() throws IOException {
+    public void subjectBtn() throws IOException, SQLException {
 
         FXMLLoader ld = new FXMLLoader();
         Pane root = ld.load(getClass().getResource("SubjectPage.fxml").openStream());
@@ -73,22 +83,16 @@ public class MainMenuController implements Initializable {
 
         pane.setDisable(true);
         stage.showAndWait();
-        UpdateGPA();
-        pane.setDisable(false);
-    }
-
-    private void UpdateGPA() {
+        student = createLoggedInStudent(sID);
+        CurrentGPA currentGPAObject = new CurrentGPA(student);
         double currentGPADouble = currentGPAObject.getGPA();
-
         currentGPA.setText(String.format("%.2f",currentGPADouble));
+        studentInformation.setText(
+                "Current Term: " + currentTerm + " Total Credit: " + student.getTotalCredit() +
+                        " Department: " +student.getDepartment().getD_NAME() + "(" +student.getDepartment().getLOCATION() + ")"
+        );
 
-        if (currentGPADouble < 2.0) {
-            currentGPA.setFill(Color.RED);
-        } else if (currentGPADouble > 3.25) {
-            currentGPA.setFill(Color.DARKBLUE);
-        } else {
-            currentGPA.setFill(Color.BLACK);
-        }
+        pane.setDisable(false);
     }
 
     private Student createLoggedInStudent(String sID) throws SQLException {
