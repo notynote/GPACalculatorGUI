@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #214151;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPAcalculator.DetailedGPAController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="680.0" prefWidth="1240.0" style="-fx-background-color: #a2d0c1;">
+         <children>
+            <AnchorPane layoutX="20.0" layoutY="14.0" prefHeight="200.0" prefWidth="1200.0">
+               <children>
+                  <Text layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILED GPA" textAlignment="CENTER" wrappingWidth="1200.0">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="20.0" layoutY="166.0" prefHeight="490.0" prefWidth="1200.0" style="-fx-background-color: #f8dc81;">
+               <children>
+                  <AnchorPane layoutX="21.0" layoutY="17.0" prefHeight="456.0" prefWidth="410.0" style="-fx-background-color: #eff7e1;">
+                     <children>
+                        <Text fx:id="subjectDoneText" layoutX="10.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBJECT DONE" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SUBJECT DONE" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="creditEarnedText" layoutX="10.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT EARNED" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT EARNED" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="termTakenText" layoutX="14.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TERM TAKEN" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TERM TAKEN" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="129.0" layoutY="385.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="48.0" prefWidth="160.0" text="[X] CLOSE" textAlignment="CENTER" />
+                        <Text fx:id="creditTransferText" layoutX="10.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT TRANSFER" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT TRANSFER" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Text fx:id="possibleDistinctionText" fill="RED" layoutX="434.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="432.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT GPA" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="currentGPAText" layoutX="435.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GPA" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="96.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="431.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL CREDIT" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="totalCreditText" layoutX="434.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL CREDIT" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

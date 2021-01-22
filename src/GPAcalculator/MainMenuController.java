@@ -95,6 +95,21 @@ public class MainMenuController implements Initializable {
         pane.setDisable(false);
     }
 
+    public void detailedGPABtn() throws IOException {
+        FXMLLoader ld = new FXMLLoader();
+        Pane root = ld.load(getClass().getResource("DetailedGPA.fxml").openStream());
+
+        DetailedGPAController controller = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Detailed GPA");
+        stage.setScene(scene);
+
+        pane.setDisable(true);
+        stage.showAndWait();
+        pane.setDisable(false);
+    }
+
     public void gradeEstimateBtn() throws IOException {
         FXMLLoader ld = new FXMLLoader();
         Pane root = ld.load(getClass().getResource("GradeEstimation.fxml").openStream());
