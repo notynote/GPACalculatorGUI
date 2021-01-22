@@ -95,6 +95,21 @@ public class MainMenuController implements Initializable {
         pane.setDisable(false);
     }
 
+    public void gradeEstimateBtn() throws IOException {
+        FXMLLoader ld = new FXMLLoader();
+        Pane root = ld.load(getClass().getResource("GradeEstimation.fxml").openStream());
+
+        GradeEstimationController controller = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Grade Estimation");
+        stage.setScene(scene);
+
+        pane.setDisable(true);
+        stage.showAndWait();
+        pane.setDisable(false);
+    }
+
     public void editInformationBtn() throws SQLException, IOException {
         FXMLLoader ld = new FXMLLoader();
         Pane root = ld.load(getClass().getResource("EditInformation.fxml").openStream());

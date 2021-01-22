@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #214151;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPAcalculator.GradeEstimationController">
+   <children>
+      <AnchorPane layoutX="20.0" layoutY="20.0" prefHeight="680.0" prefWidth="1240.0" style="-fx-background-color: #a2d0c1;">
+         <children>
+            <AnchorPane layoutX="20.0" layoutY="14.0" prefHeight="200.0" prefWidth="1200.0">
+               <children>
+                  <Text fx:id="welcomeText" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GRADE ESTIMATION" textAlignment="CENTER" wrappingWidth="1200.0">
+                     <font>
+                        <Font name="System Bold" size="48.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="20.0" layoutY="166.0" prefHeight="490.0" prefWidth="1200.0" style="-fx-background-color: #f8dc81;">
+               <children>
+                  <AnchorPane layoutX="782.0" layoutY="20.0" prefHeight="456.0" prefWidth="410.0" style="-fx-background-color: #eff7e1;">
+                     <children>
+                        <Text fx:id="currentGradeText" layoutX="10.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C GRADE" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT GPA" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="creditLeftText" layoutX="10.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT LEFT" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT LEFT" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="termTakenText" layoutX="14.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TERM TAKEN" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="14.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TERM TAKEN" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="129.0" layoutY="385.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="48.0" prefWidth="160.0" text="[X] CLOSE" textAlignment="CENTER" />
+                        <Text fx:id="creditTransferText" layoutX="10.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT TRANSFER" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="10.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CREDIT TRANSFER" textAlignment="CENTER" wrappingWidth="390.0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="16.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIMUM FOR DISTINCTION" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="distinctionGradeText" layoutX="19.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D GRADE" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="18.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIMUM FOR GRADUATE" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gradutateGradeText" layoutX="21.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G GRADE" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="18.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MINIMUM FOR HIGH DISTINCTION" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="highDistinctionGradeText" layoutX="21.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HD GRADE" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#214151" layoutX="16.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Graduation Requirement - No more than 8 years (24 terms) with GPA at least 2.0" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#214151" layoutX="18.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distinction Requirement - No more than 20 transfer credits with GPA at least 3.25 with no F" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#214151" layoutX="16.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Distinction Requirement - No more than 20 transfer credits with GPA at least 3.5 with no F" textAlignment="CENTER" wrappingWidth="759.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

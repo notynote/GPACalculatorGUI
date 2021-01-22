@@ -45,7 +45,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="820.0" layoutY="180.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="GRADE ESTIMATION">
+                  <Button layoutX="820.0" layoutY="180.0" mnemonicParsing="false" onAction="#gradeEstimateBtn" prefHeight="100.0" prefWidth="300.0" text="GRADE ESTIMATION">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
