@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #214151;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPAcalculator.EditInformationController">
+   <children>
+      <AnchorPane layoutX="30.0" layoutY="126.0" prefHeight="580.0" prefWidth="1220.0" style="-fx-background-color: #eff7e1;">
+         <children>
+            <Text layoutX="280.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CURRENT TERM">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="276.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STUDENT NAME">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="772.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPARTMENT" textAlignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="622.0" layoutY="493.0" mnemonicParsing="false" onAction="#closeWindow" prefHeight="50.0" prefWidth="160.0" text="[X] CANCEL" textAlignment="CENTER" />
+            <Button layoutX="439.0" layoutY="493.0" mnemonicParsing="false" onAction="#editInformation" prefHeight="50.0" prefWidth="160.0" text="EDIT INFORMATION" textAlignment="CENTER" />
+            <Text fx:id="statusText" fill="RED" layoutX="22.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="1176.55078125">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="currentInformationText" layoutX="12.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Information" textAlignment="CENTER" wrappingWidth="1196.328125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="currentTermField" layoutX="219.0" layoutY="184.0" prefHeight="50.0" prefWidth="300.0" />
+            <TextField fx:id="studentNameField" layoutX="219.0" layoutY="303.0" prefHeight="50.0" prefWidth="300.0" />
+            <ChoiceBox fx:id="departmentChoiceBox" layoutX="702.0" layoutY="227.0" prefHeight="50.0" prefWidth="300.0" />
+         </children>
+      </AnchorPane>
+      <Text fill="#eff7e1" layoutX="30.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIT INFORMATION" textAlignment="CENTER" wrappingWidth="1240.0">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

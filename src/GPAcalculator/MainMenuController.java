@@ -95,6 +95,28 @@ public class MainMenuController implements Initializable {
         pane.setDisable(false);
     }
 
+    public void editInformationBtn() throws SQLException, IOException {
+        FXMLLoader ld = new FXMLLoader();
+        Pane root = ld.load(getClass().getResource("EditInformation.fxml").openStream());
+
+        EditInformationController controller = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Edit Information");
+        stage.setScene(scene);
+
+        pane.setDisable(true);
+        stage.showAndWait();
+        student = createLoggedInStudent(sID);
+        welcomeText.setText("WELCOME " + student.getsName());
+        currentTerm = student.getTermTaken()+1;
+        studentInformation.setText(
+                "Current Term: " + currentTerm + " Total Credit: " + student.getTotalCredit() +
+                        " Department: " +student.getDepartment().getD_NAME() + "(" +student.getDepartment().getLOCATION() + ")"
+        );
+        pane.setDisable(false);
+    }
+
     public void changePasswordBtn() throws IOException, SQLException {
         FXMLLoader ld = new FXMLLoader();
         Pane root = ld.load(getClass().getResource("ChangePassword.fxml").openStream());

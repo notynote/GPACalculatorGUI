@@ -60,7 +60,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="100.0" layoutY="318.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="EDIT INFORMATION">
+                  <Button layoutX="100.0" layoutY="318.0" mnemonicParsing="false" onAction="#editInformationBtn" prefHeight="100.0" prefWidth="300.0" text="EDIT INFORMATION">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
