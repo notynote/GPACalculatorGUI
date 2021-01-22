@@ -17,7 +17,7 @@ public class GradeEstimationController implements Initializable {
     Pane pane;
 
     @FXML
-    Text gradutateGradeText;
+    Text gradutatGradeText;
 
     @FXML
     Text distinctionGradeText;
@@ -50,13 +50,13 @@ public class GradeEstimationController implements Initializable {
         termTakenText.setText(String.valueOf(student.getTermTaken()));
 
         //graduate grade
-        getGraduateGrade(student, currentGPA, gradutateGradeText);
+        getGraduateGrade(student, currentGPA, gradutatGradeText);
         getDistinctionGrade(student, currentGPA, distinctionGradeText, 3.25);
         getDistinctionGrade(student, currentGPA, highDistinctionGradeText, 3.5);
 
     }
 
-    private void getGraduateGrade(Student student, CurrentGPA currentGPA, Text gradutateGradeText) {
+    private void getGraduateGrade(Student student, CurrentGPA currentGPA, Text gradutatGradeText) {
 
         int remainingSubject = (student.getRequireCredit() - student.getTotalCredit())/4;
         double oldGPAXOldCredit = student.getTotalCredit() * currentGPA.getGPA();
@@ -65,12 +65,12 @@ public class GradeEstimationController implements Initializable {
             double gradeToGraduate = currentGPA.FindPossibleGrade(student,remainingSubject,2.0,oldGPAXOldCredit);
             Grade grade = new Grade();
 
-            gradutateGradeText.setFill(Color.DARKBLUE);
-            gradutateGradeText.setText(grade.getGradeText(gradeToGraduate));
+            gradutatGradeText.setFill(Color.DARKBLUE);
+            gradutatGradeText.setText(grade.getGradeText(gradeToGraduate));
 
         } else {
-            gradutateGradeText.setText("Not Qualify");
-            gradutateGradeText.setFill(Color.RED);
+            gradutatGradeText.setText("Not Qualify");
+            gradutatGradeText.setFill(Color.RED);
         }
 
     }
