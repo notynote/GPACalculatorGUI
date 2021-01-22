@@ -50,7 +50,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="453.0" layoutY="318.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" text="CHANGE PASSWORD">
+                  <Button layoutX="453.0" layoutY="318.0" mnemonicParsing="false" onAction="#changePasswordBtn" prefHeight="100.0" prefWidth="300.0" text="CHANGE PASSWORD">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

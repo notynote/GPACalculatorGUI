@@ -50,11 +50,6 @@ public class LoginController {
         } else {
 
             if (checkUser(studentIDText,passCodeText)) {
-//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//                alert.setTitle("FUCK YEAH!");
-//                alert.setHeaderText(null);
-//                alert.setContentText("YOU FUCKING LOGGED IN WITH STUDENT ID " + studentIDText);
-//                alert.showAndWait();
 
                 loggedInStudentID = studentIDText;
 

@@ -95,6 +95,22 @@ public class MainMenuController implements Initializable {
         pane.setDisable(false);
     }
 
+    public void changePasswordBtn() throws IOException, SQLException {
+        FXMLLoader ld = new FXMLLoader();
+        Pane root = ld.load(getClass().getResource("ChangePassword.fxml").openStream());
+
+        ChangePasswordController controller = ld.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Change Password");
+        stage.setScene(scene);
+
+        pane.setDisable(true);
+        stage.showAndWait();
+        student = createLoggedInStudent(sID);
+        pane.setDisable(false);
+    }
+
     private Student createLoggedInStudent(String sID) throws SQLException {
 
         PreparedStatement createStudentStatement = Main.connection.prepareStatement(
